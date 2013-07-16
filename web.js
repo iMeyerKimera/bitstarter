@@ -2,10 +2,8 @@ var express = require('express');
 
 var app = express.createServer(express.logger());
 
-var index = fs.readFile('/bitstarter/index.html');
-
 app.get('/', function(request, response) {
-  response.send(index); 
+  response.send(fs.readFile('bitstarter/index.html')); 
 });
 
 var port = process.env.PORT || 5000;
